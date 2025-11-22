@@ -16,12 +16,69 @@ public class MeepMeepTestingggg {
                 .setConstraints(60, 60, Math.toRadians(180), Math.toRadians(180), 15)
                 .build();
 
-        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-40 , 0, Math.toRadians(90)))
+     /*double r =0;
+        double u =90;
+        double l= 180;
+        double d= 270;
+*/
+// WAITING CHANGES IT CUZ ACCELERATION GONE
+
+       myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(40 , 20, Math.toRadians(0)))
 
 
-                .splineTo(new Vector2d(0, 25), Math.toRadians(0))
-                .splineTo(new Vector2d(35, 0), Math.toRadians(0))
-                .splineTo(new Vector2d(0, -10), Math.toRadians(0))
+
+                // backpack
+              .splineTo(new Vector2d(50, -10), Math.toRadians(270))
+
+
+              // .splineTo(new Vector2d(40, -40), Math.toRadians(180)) but looks down so we don't have to rotate it for legs
+               .splineToSplineHeading(new Pose2d(40, -40, Math.toRadians(270)), Math.toRadians(180))
+               .waitSeconds(1)
+
+
+               // LEGS
+             //  .splineTo(new Vector2d(15, -50), Math.toRadians(90))
+                       .lineToY(-50)
+
+               .splineToSplineHeading(new Pose2d(15, -50, Math.toRadians(180)), Math.toRadians(90))
+
+
+
+
+                       .waitSeconds(1)
+
+                       .lineToXLinearHeading(-5, Math.toRadians(270))
+
+               .waitSeconds(1)
+
+               .splineToSplineHeading(new Pose2d(-25, -50, Math.toRadians(90)), Math.toRadians(90))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 .build());
 
 
